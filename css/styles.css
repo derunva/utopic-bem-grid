@@ -7,10 +7,65 @@ img{
   max-width: 100%;
 }
 body{
-  background: #d0d0d0;
+  background: #161616;
+  line-height: 1.5;
 }
-.white-bg{
+.header{
+  border-top: 5px solid #ad009b;
+  padding: 50px 10px 30px;
   background: #fff;
+  position: relative;
+}
+.header__search{
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 0;
+}
+@media (min-width: 640px){
+  .header__search{
+    left: auto;
+    width: 220px;
+  }
+}
+.search{
+  background: #eaeaea;
+  border-radius: 0 0 5px 5px;
+  padding: 0 5px 0 0;
+}
+.search button{
+  width: 26px;
+  height: 26px;
+  background: #fff;
+  border: 0;
+  border-radius: 50%;
+  display: inline-flex;
+  font-size: 16px;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+  vertical-align: top;
+} 
+.search input{
+  width: calc( 100% - 30px );
+  height: 30px;
+  background: none;
+  border: 0;
+  border-radius: 0 0 0 5px;
+  padding: 0 10px;
+  color: #333;
+  vertical-align: top;
+}
+.logo{
+  display: inline-block;
+  text-decoration:  none;
+  font-size: 36px;
+  color: #333;
+  line-height: .8;
+}
+.slogan{
+  font-size: 16px;
+  color: #666;
 }
 .article-short{
   padding: 10px;
@@ -47,6 +102,7 @@ body{
   margin: 0 auto;
   padding: 0 15px;
   width: 300px;
+  background: #cfcfcf;
 }
 @media (min-width: 640px){
   .wrapper{
@@ -59,9 +115,37 @@ body{
   flex-wrap: wrap;
   justify-content: center;
 }
+.main-nav ul{
+  position: fixed;
+  top: 0;
+  left: -100%;
+  bottom: 0;
+  width: 100%;
+  transition: left .5s ease;
+  background: #fff;
+  overflow-y: auto;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+  align-items: center;
+}
+.main-nav.is-active ul{
+  left: 0;
+}
 [class*="column-"]{
   width: 100%;
   padding: 0 15px;
+}
+.column-logo{
+  width: calc( 100% - 60px);
+}
+.column-main-nav{
+  width: 60px;
+}
+.row.white-bg{
+  margin: 0;
 }
 @media (min-width: 640px){
   .column-phone-1-2{
@@ -75,4 +159,10 @@ body{
  .wrapper{
     width: 900px;
   }
+}
+.wrapper_p-g-20{
+  padding: 0 20px;
+}
+.white-bg{
+  background: #fff;
 }
